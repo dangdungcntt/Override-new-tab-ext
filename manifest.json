@@ -1,0 +1,20 @@
+{
+    "name": "Override NewTab",
+    "description": "Override NewTab with html file",
+    "version": "1.0.0",
+    "browser_action": {
+        "default_icon": "icons/icon48.png"
+    },
+    "icons": {
+        "128": "icons/icon128.png",
+        "16": "icons/icon16.png",
+        "19": "icons/icon19.png",
+        "38": "icons/icon38.png",
+        "48": "icons/icon48.png"
+    },
+    "content_security_policy": "script-src 'self';img-src *;default-src",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "manifest_version": 2
+}
