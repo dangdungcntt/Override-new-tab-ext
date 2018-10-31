@@ -44,11 +44,9 @@ var n = +urlSearch.get('n') || 5;
 var showTime = +urlSearch.get('t') || 4000;
 
 document.getElementById('default-1').innerText = '1 / ' + n;
-document.getElementById('default-2').innerText = '2 / ' + n;
-document.getElementById('default-3').innerText = '3 / ' + n;
 
 var html = '';
-for (var i = 4; i <= n; i++) {
+for (var i = 2; i <= n; i++) {
     html +=
         '<div class="mySlides fade">' +
         '<div class="numbertext">' + i + ' / ' + n + '</div>' +
