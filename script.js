@@ -29,7 +29,6 @@ function startTime() {
     s = checkTime(s);
     time.innerHTML = h + ":" + m + ":" + s;
     date.innerHTML = checkTime(today.getDate()) + '/' + checkTime(today.getMonth() + 1) + '/' + today.getFullYear()
-    var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
     if (i < 10) { return "0" + i };  // add zero in front of numbers < 10
@@ -61,11 +60,48 @@ var time = document.getElementById('time');
 var date = document.getElementById('date');
 var slideIndex = 1;
 
-startTime();
+setInterval(startTime, 500);
 
 showSlides(slideIndex);
 setInterval(function () {
     plusSlides(1);
 }, showTime)
 
+/* View in fullscreen */
+function openFullscreen() {
+    var elem = document.documentElement;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  }
+  
+  /* Close fullscreen */
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+      document.msExitFullscreen();
+    }
+  }
+
+var btnFull = document.getElementById('btnFullScreen');
+var fulled = false;
+btnFull.onclick = function() {
+    if (fulled) {
+        closeFullscreen();
+    } else {
+        openFullscreen()
+    }
+    fulled = !fulled;
+}
 

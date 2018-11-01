@@ -1,7 +1,6 @@
 #time {
     text-align: center;
     font-weight: bold;
-    cursor: pointer;
     clear: none;
     color: #000;
     white-space: nowrap;
@@ -121,4 +120,20 @@
     to {
       opacity: 1
     }
+  }
+
+  #btnFullScreen {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: green;
+    color: #fff;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #btnFullScreen:hover {
+    background: #50a550
   }
