@@ -40,8 +40,8 @@ function checkTime(i) {
  * Add image to slide
  */
 var urlSearch = new URLSearchParams(location.href);
-var n = +urlSearch.get('n') || 5;
-var showTime = +urlSearch.get('t') || 4000;
+var n = +urlSearch.get('n') || +localStorage.getItem('n') || 5;
+var showTime = +urlSearch.get('t') || +localStorage.getItem('t') || 4000;
 
 document.getElementById('default-1').innerText = '1 / ' + n;
 
