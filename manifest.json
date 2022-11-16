@@ -1,8 +1,8 @@
 {
     "name": "Override NewTab",
     "description": "Override NewTab with html file",
-    "version": "1.1.0",
-    "browser_action": {
+    "version": "1.1.1",
+    "action": {
         "default_icon": "icons/icon48.png"
     },
     "icons": {
@@ -12,7 +12,9 @@
         "38": "icons/icon38.png",
         "48": "icons/icon48.png"
     },
-    "content_security_policy": "script-src 'self';img-src *;style-src 'unsafe-inline';default-src 'self'",
+    "content_security_policy": {
+        "extension_pages": "script-src 'self';img-src *;style-src 'unsafe-inline';default-src 'self'"
+    },
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
