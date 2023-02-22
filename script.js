@@ -31,6 +31,7 @@ function startTime() {
     date.innerHTML = checkTime(today.getDate()) + '/' + checkTime(today.getMonth() + 1) + '/' + today.getFullYear()
 }
 function checkTime(i) {
+    i.toString().padStart(2, '0')
     if (i < 10) { return "0" + i };  // add zero in front of numbers < 10
     return i;
 }
@@ -61,6 +62,10 @@ var date = document.getElementById('date');
 var slideIndex = 1;
 
 setInterval(startTime, 500);
+
+startTime();
+
+date.style.display = 'block';
 
 showSlides(slideIndex);
 setInterval(function () {
